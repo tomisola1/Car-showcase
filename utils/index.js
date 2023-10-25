@@ -2,7 +2,7 @@ const axios = require('axios');
 
 export const fetchCars = async() => {
     const headers = {
-        'X-RapidAPI-Key': '176a0f21b0msha73166ae76c3941p12248ejsnc13e2008f23c',
+        'X-RapidAPI-Key':process.env.RAPID_API_KEY,
         'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
     try {

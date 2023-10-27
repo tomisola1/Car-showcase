@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, Fragment } from "react";
 import { manufacturers } from "@/constants";
 
-const SearchManufacturer = ({manufacturer, setmanufacturer}) => {
+const SearchManufacturer = ({selected, setSelected}) => {
     const [query, setQuery] = useState("")
 
     const filteredManufacturers = query === "" ? manufacturers : manufacturers.filter((item) =>(
@@ -14,7 +14,7 @@ const SearchManufacturer = ({manufacturer, setmanufacturer}) => {
 
   return (
     <div className="search-manufacturer">
-        <Combobox>
+        <Combobox value={selected} onChange={setSelected}>
             <div className="relative w-full">
                 <Combobox.Button className="absolute top-[14px]">
                     <Image 
